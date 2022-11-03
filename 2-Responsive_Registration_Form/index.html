@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h2><u>Re</u>gistration</h2>
+            <fieldset id="top">
+                <div class="fields">
+                    <label for="name">Full Name</label><br/>
+                    <input type="text" placeholder="Enter your name" id="name" name="full-name" required/><br/>
+                </div>
+
+                <div class="fields">
+                    <label for="username">Username</label><br/>
+                    <input type="text" placeholder="Enter your username" id="username" name="username" required/><br/>
+                </div>
+
+                <div class="fields">
+                    <label for="email">Email</label><br/>
+                    <input type="email" placeholder="Enter your email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/><br/>
+                </div>
+
+                <div class="fields">
+                    <label for="phone-number">Phone Number</label><br/>
+                    <input type="tel" placeholder="Enter your number (000 111 2222)" id="phone-number" name="phone-number" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required/><br/>
+                </div>
+
+                <div class="fields">
+                    <label for="password">Password</label><br/>
+                    <input type="password" placeholder="Enter your password" id="password" name="password" minlength="8" maxlength="15" required/><br/>
+                </div>
+
+                <div class="fields">
+                    <label for="confirm-password">Confirm Password</label><br/>
+                    <input type="password" placeholder="Confirm your password" id="confirm-password" name="password" minlength="8" maxlength="15" required/><br/>
+                </div>
+            </fieldset>
+
+
+            <label id="bottom-label">Gender</label>
+            <fieldset id="bottom">
+
+                <div>
+                    <input type="radio" id="male" name="gender" value="male" required/>
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female" name="gender" value="female"/>
+                    <label for="female">Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="silent" name="gender" value="silent"/>
+                    <label for="silent">Prefer not to say</label>
+                </div>
+            </fieldset>
+
+            <input type="submit" id="register-button" value="Register"/>
+
+        </form>
+    </div>
+    
+    <script src="./main.js"></script>
+</body>
+</html>
