@@ -1,5 +1,8 @@
 const button = document.getElementsByClassName("button");
+const menu = document.querySelector("#hamburger");
 
+
+// CODE TO MAKE A MENU ACTIVE
 for (let i = 0; i < button.length; i++)
 {
     button[i].addEventListener('click', () => {
@@ -16,3 +19,9 @@ for (let i = 0; i < button.length; i++)
         button[i].className += " active";
     })
 }
+
+// CODE TO TOGGLE SIDEBAR (COLLAPSE / EXPAND)
+menu.addEventListener('click', () => {
+    const toggleBar = document.querySelector(".navbar");
+    toggleBar.classList.toggle("collapse");
+})

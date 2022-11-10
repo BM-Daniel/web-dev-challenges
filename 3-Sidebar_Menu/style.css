@@ -1,3 +1,14 @@
+/* 
+    This project a design of a sidebar menu that includes the heading of the page or site.
+    It is applicable to screens from tablets (768px) to large laptop screens (1440px) width.
+
+    Some features included are:
+
+    1. The ability to exapnd and collapse the sidebar
+    2. The ability to select any sidebar menu for it to become active (active menu has red background
+    3. A hover on any sidebar menu displays a light red background
+*/
+
 *
 {
     padding: 0;
@@ -5,17 +16,22 @@
     box-sizing: border-box;
 }
 
-body
-{
-    font-family: 'Poppins', sans-serif;
-}
-
 :root
 {
     --white: rgb(245, 239, 239);
     --black: rgb(31, 31, 31);
     --red: rgb(255, 0, 0);
-    --light-red: rgb(255, 98, 98);
+    --light-red: rgb(249, 146, 146);
+    --main-background: rgb(222, 222, 222);
+    --sidebar-background: rgb(245, 239, 239);
+    --sidebar-width: 18vw;
+    --sidebar-width-collapse: 5vw;
+}
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-background);
 }
 
 a
@@ -24,95 +40,113 @@ a
     color: var(--black);
 }
 
+
 .navbar
 {
-    position: fixed;
+    width: var(--sidebar-width);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* X-AXIS */
+    padding: 2vh 1vw;
+    background-color: var(--sidebar-background);
+    box-shadow: 0 0 10px 0;
+
+    display: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 20vw;
-    box-shadow: 0px 0px 10px 0px var(--black);
-    padding: 2vh 1vw;
+}
+
+.navbar .navbar-heading
+{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.navbar #title
+.navbar .navbar-heading #hamburger
 {
-    margin-bottom: 5vh;
-    font-size: 4vh;
-    font-weight: 500;
-    width: 100%;
-    /* border: solid blue 2px; */
-}
-
-.navbar #title i
-{
-    margin-right: 15px;
-}
-
-.navbar .sidebar
-{
-    width: calc(20vw - 3vw);
-    height: calc(100vh - 15vh);
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.navbar .sidebar #top
-{
-    height: 70%;
-    /* border: solid green 2px; */
-    
+    font-size: 3vw;
+    margin-right: 1vw;
 }
 
 .navbar .sidebar #top,
 .navbar .sidebar #bottom
 {
+    margin-bottom: 5vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.navbar .sidebar #top a,
-.navbar .sidebar #bottom a
+.navbar .sidebar #top .button,
+.navbar .sidebar #bottom .button
 {
-    border-radius: 5px;
-    padding: 1.5vh 1vw;
-    font-size: 2.5vh;
+    font-size: 1.2vw;
+    width: calc(var(--sidebar-width) - 2vw);
+    padding: .7vh 1vw;
 }
 
-.navbar .sidebar #top a.active,
-.navbar .sidebar #bottom a.active,
-.navbar .sidebar #top a:hover,
-.navbar .sidebar #bottom a:hover
+.navbar .sidebar #top .button i,
+.navbar .sidebar #bottom .button i
+{
+    margin-right: 1vw;
+}
+
+
+/* SIDEBAR MENU ON ACTIVE OR HOVER */
+
+.navbar .sidebar #top .button.active,
+.navbar .sidebar #bottom .button.active,
+.navbar .sidebar #top .button:hover,
+.navbar .sidebar #bottom .button:hover
 {
     background-color: var(--red);
     color: var(--white);
-    font-weight: 500;
+    border-radius: 5px;
 }
 
-.navbar .sidebar #top a:hover,
-.navbar .sidebar #bottom a:hover
+.navbar .sidebar #top .button:hover,
+.navbar .sidebar #bottom .button:hover
 {
     background-color: var(--light-red);
 }
 
-.navbar .sidebar #top i,
-.navbar .sidebar #bottom i
+/* END OF SIDEBAR MENU ON ACTIVE OR HOVER */
+
+
+/* SIDEBAR MENU HAMBURGER TOGGLE (EXPAND / COLLAPSE) */
+.navbar.collapse
 {
-    margin-right: 10px;
+    width: var(--sidebar-width-collapse);
 }
 
-.navbar .sidebar #bottom
+.navbar.collapse .navbar-heading #title,
+.navbar.collapse .sidebar #top .button span,
+.navbar.collapse .sidebar #bottom .button span
 {
-    /* border: solid black 2px; */
-    height: 20%;
+    display: none;
 }
 
+.navbar.collapse .sidebar #top .button,
+.navbar.collapse .sidebar #bottom .button
+{
+    width: calc(var(--sidebar-width-collapse) - 2vw)
+}
 
-@media screen and (max-width: )
+/* END OF SIDEBAR MENU HAMBURGER TOGGLE (EXPAND / COLLAPSE) */
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px)
+{
+    .navbar .sidebar #top .button,
+    .navbar .sidebar #bottom .button
+    {
+        font-size: 1.5vw;
+    }
+}
+
+/* END OF MEDIA QUERIES */
