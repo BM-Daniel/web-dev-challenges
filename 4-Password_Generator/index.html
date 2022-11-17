@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet"> 
+    
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-heading">Password Generator</h1>
+        <hr/>
+
+        <form id="password-form">
+            <div id="display-container">
+                <input type="text" placeholder="Click generate button" id="display" readonly>
+                <i class='bx bx-copy-alt'></i>
+            </div>
+            <br/>
+            <div id="slider-container">
+                <input type="range" min="6" max="15" step="1" value="8" id="slider" />
+                <p id="slidervalue">8</p>
+            </div>
+            <br/>
+            <button type="button" id="generate-button">Generate</button>
+        </form>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

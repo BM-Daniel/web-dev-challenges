@@ -52,7 +52,7 @@ a
     background-color: var(--sidebar-background);
     box-shadow: 0 0 10px 0;
 
-    display: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;

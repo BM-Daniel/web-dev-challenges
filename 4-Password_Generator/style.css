@@ -1,0 +1,138 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --red: rgb(247, 72, 72);
+    --black: rgb(51, 51, 51);
+    --white: rgb(241, 232, 232);
+    --grey: rgb(137, 137, 137);
+}
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--red);
+    height: 100vh;
+    width: 100vw;
+}
+
+/* MAIN CONTAINER */
+.container
+{
+    width: 25%;
+    background-color: var(--white);
+    padding: 2vh 1.5vw;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* H2 HEADING */
+.container #main-heading
+{
+    font-size: 1.5vw;
+    color: var(--black);
+    font-weight: 400;
+    margin-bottom: 1vh;
+}
+
+/* HORIZONTAL BAR */
+.container hr
+{
+    opacity: 0.3;
+}
+
+/* FIELD TO DISPLAY GENERATED PASSWORD + COPY BUTTON */
+.container #password-form #display-container
+{
+    border: solid var(--grey) 2px;
+    margin-top: 4vh;
+    padding: 2vh 1vw;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container #password-form #display
+{
+    border: none;
+    background-color: transparent;
+}
+
+
+.container #password-form #display-container i
+{
+    cursor: pointer;
+}
+
+.container #password-form #display,
+.container #password-form #display-container i
+{
+    font-size: 1.5vw;
+}
+
+/* SLIDER SECTION */
+.container #password-form #slider-container {
+    width: 100%; /* Width of the outside container */
+    display: flex;
+    flex-direction: row;
+}
+  
+.container #password-form #slider-container #slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: var(--red);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-right: 1vw;
+}
+
+.container #password-form #slider-container #slider:hover {
+    opacity: 1;
+}
+
+/* -webkit- for Chrome, Opera, Safari, Edge and -moz- for Firefox to override default look */
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgb(255, 255, 255);
+}
+
+.container #password-form #slider-container #slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* GENERATE BUTTON SECTION */
+#generate-button
+{
+    width: 100%;
+    padding: 2vh 3vw;
+    font-size: 1.2vw;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
