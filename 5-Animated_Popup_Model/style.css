@@ -1,0 +1,259 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --red: rgb(214, 21, 21);
+    --light-red: rgb(228, 62, 62);
+    --grey: rgb(73, 73, 73);
+    --light-grey: rgb(228, 214, 214);
+    --white: rgb(239, 239, 239);
+}
+
+body
+{
+    background-color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+
+.container.transition
+{
+    opacity: 1;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: transform 1s;
+}
+
+
+.container .close
+{
+    display: none;
+}
+
+.container #profile
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container #profile #profile-pic,
+.container #profile #profile-pic img
+{
+    border-radius: 50%;
+}
+
+.container #profile #profile-pic
+{
+    border: var(--red) 2px solid;
+    width: 200px;
+    height: 200px;
+}
+
+.container #profile #profile-pic img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border: solid var(--white) 3px;
+}
+
+
+.container #profile .details
+{
+    text-align: center;
+    margin-top: 2vh;
+    color: var(--grey);
+}
+
+.container #profile .details h2
+{
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.container #profile .details p
+{
+    position: relative;
+    top: -5px;
+    font-size: 16px;
+}
+
+
+.container .buttons
+{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+}
+
+
+.container #hire-me-button
+{
+    margin-top: 1.5vh;
+    background-color: var(--light-red);
+    padding: 2vh 4vw;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.container #hire-me-button span
+{
+    margin-left: 6px;
+}
+
+.container #hire-me-button:hover
+{
+    background-color: var(--red);
+}
+
+
+.container #message-form
+{
+    display: none;
+}
+
+
+
+
+/* STYLING FOR COMPONENTS WHEN 'HIRE ME' BUTTON IS CLICKED */
+/* WHEN 'HIRE ME' BUTTON IS CLICKED, THE ACTIVE CLASS IS ENABLED */
+
+
+.container.active
+{
+    /* border: solid blue 2px; */
+    box-shadow: 0px 0px 3px red;
+    height: 70vh;
+    width: 40vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3vh 2vw;
+    background-color: var(--light-grey);
+    opacity: 1;
+}
+
+.container.active .close
+{
+    display: block;
+    position: absolute;
+    right: 12px;
+    color: var(--grey);
+    font-size: 32px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.container.active .close:hover
+{
+    transform: scale(1.3);
+}
+
+.container.active #profile
+{
+    flex-direction: row;
+    margin-bottom: 3vh;
+}
+
+.container.active #profile #profile-pic
+{
+    width: 80px;
+    height: 80px;
+}
+
+
+.container.active #profile .details
+{
+    margin-left: 1vw;
+    text-align: left;
+}
+
+.container.active #hire-me-button
+{
+    display: none;
+}
+
+.container.active #message-form
+{
+    display: block;
+    width: 100%;
+}
+
+.container.active #message-form textarea
+{
+    color: var(--grey);
+    background-color: var(--white);
+    font-size: 18px;
+    padding: 2vh 1vw;
+    resize: none;
+    border: solid 2px var(--red);
+    border-radius: 3px;
+    width: 100%;
+    height: 42vh;
+}
+
+.container.active #message-form textarea:focus
+{
+    outline: solid 2px var(--light-red);
+}
+
+.container.active #message-form .popup-buttons
+{
+    margin-top: 3vh;
+    position: absolute;
+    right: 35px;
+}
+
+.container.active #message-form .popup-buttons button
+{
+    padding: 1.2vh 1.5vw;
+     
+}
+
+.container.active #message-form .popup-buttons #cancel
+{
+    background-color: var(--grey);
+    opacity: 0.9;
+    margin-right: 1vw;
+    transition: all 0.5s;
+}
+
+.container.active #message-form .popup-buttons #cancel:hover
+{
+    background-color: var(--white);
+    color: var(--grey)
+}
+
+.container.active #message-form .popup-buttons #send
+{
+    background-color: var(--red);
+    transition: all 0.8s;
+}
+
+.container.active #message-form .popup-buttons #send:hover
+{
+    background-color: blue;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Popup Model</title>
+
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="container">
+        <i class='bx bx-x close'></i>
+
+        <section id="profile">
+            <div id="profile-pic">
+                <img src="./profile-picture.png" alt="profile">
+            </div>
+    
+            <div class="details">
+                <h2>Babereyir Daniel Mwinsor</h2>
+                <p>Web Developer & YouTuber</p>
+            </div>
+        </section>
+
+        <button type="button" class="buttons" id="hire-me-button" autofocus><i class='bx bx-envelope'></i><span>Hire Me</span></button>
+
+        <form action="" id="message-form">
+            <textarea placeholder="Enter your message" id="message" autofocus required></textarea>
+
+            <div class="popup-buttons">
+                <button type="button" class="buttons" id="cancel">Cancel</button>
+                <button type="submit" class="buttons" id="send">Send</button>
+            </div>
+        </form>
+
+        
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
