@@ -1,0 +1,83 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --black: rgb(22, 22, 22);
+    --white: rgb(234, 234, 234);
+    --red: rgb(219, 13, 13);
+    --blue: rgb(10, 40, 191);
+    --radius: 7px;
+}
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container
+{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red);
+}
+
+
+.container #calendar
+{
+    padding: 1.5em 1.2em;
+    border-radius: var(--radius);
+    background-color: var(--blue)
+}
+
+.container #calendar #dob,
+.container #calendar #calculate-button
+{
+    padding: 1em 1.5em;
+    /* font-weight: 500; */
+}
+
+.container #calendar #dob
+{
+    margin-right: 20px;
+}
+
+.container #calendar #calculate-button
+{
+
+}
+
+
+.container #result
+{
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-around;
+    width: 20em;
+    margin-top: 40px;
+}
+
+.container #result div
+{
+    border: none;
+    outline: none;
+    border-radius: var(--radius);
+    width: 25%;
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--blue);
+    color: var(--white);
+}
+/* MAKE SURE TO RESTRICT THE DATE RANGE SO THAT NO ONE ENTERS A DATE LATER THAN TODAY */
+.container #result div p:first-child
+{
+    /* font-weight: bold; */
+    /* font-size: 60px; */
+}
